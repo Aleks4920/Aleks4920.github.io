@@ -1,0 +1,35 @@
+{
+  "name": "aleks4920.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "serve . -p 3000",
+    "lint": "htmlhint index.html",
+    "build": "npm run minify:html && npm run minify:css && npm run minify:js",
+    "minify:html": "html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true -o dist/index.html index.html",
+    "minify:css": "cleancss -o dist/style.min.css style.css 2>/dev/null || true",
+    "minify:js": "terser script.js -o dist/script.min.js 2>/dev/null || true",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aleks4920/Aleks4920.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aleks4920/Aleks4920.github.io/issues"
+  },
+  "homepage": "https://github.com/Aleks4920/Aleks4920.github.io#readme",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.3",
+    "gh-pages": "^6.3.0",
+    "html-minifier-terser": "^7.2.0",
+    "htmlhint": "^1.9.2",
+    "serve": "^14.2.7",
+    "terser": "^5.51.2"
+  }
+}
