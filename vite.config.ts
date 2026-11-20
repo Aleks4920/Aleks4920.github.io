@@ -4,6 +4,6 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/Aleks4920.github.io/',  // your repo name
+  base: '/',  // user site (username.github.io) deploys to root
   build: { outDir: 'dist' },
 })
